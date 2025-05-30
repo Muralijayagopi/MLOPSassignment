@@ -1,10 +1,12 @@
 import pickle
-from model.preprocessing import preprocess_input
+import numpy as np
 
-# Load model
+# Load the model
 with open('model/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-def predict_salary(experience):
-    X = preprocess_input(experience)
-    return model.predict(X)[0]
+def predict(experience: float) -> float:
+    experience_array = np.array([[experience]])
+    prediction = model.predict(experience_array)
+    return prediction[0]
+
