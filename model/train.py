@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 import pickle
-from model.preprocessing import preprocess_data
+from preprocessing import preprocess_data
 
 # Load and preprocess data
 df = pd.read_csv('data/sample_data.csv')
